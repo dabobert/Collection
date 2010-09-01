@@ -1,0 +1,408 @@
+
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "rating" float, "year" integer, "item_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_items_on_name" ON "items" ("name")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_items_on_item_type_id" ON "items" ("item_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_items_on_year" ON "items" ("year")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_items_on_rating" ON "items" ("rating")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808210552')[0m
+Migrating to CreateCreators (20100808211038)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "creators" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_creators_on_name" ON "creators" ("name")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100808211038')[0m
+Migrating to CreateItemCreators (20100808211135)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "item_creators" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "creator_id" integer, "creator_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_creators_on_item_id" ON "item_creators" ("item_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_item_creators_on_creator_id" ON "item_creators" ("creator_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_creators_on_creator_type_id" ON "item_creators" ("creator_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808211135')[0m
+Migrating to CreateItemKeys (20100808211408)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "item_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "key_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_item_keys_on_item_id" ON "item_keys" ("item_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_keys_on_key_id" ON "item_keys" ("key_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808211408')[0m
+Migrating to CreateKeyTypes (20100808211518)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "key_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "item_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_key_types_on_item_type_id" ON "key_types" ("item_type_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100808211518')[0m
+Migrating to CreateCreatorTypes (20100808211719)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+Migrating to CreateCreators (20100808211038)
+Migrating to CreateItemCreators (20100808211135)
+Migrating to CreateItemKeys (20100808211408)
+Migrating to CreateKeyTypes (20100808211518)
+Migrating to CreateCreatorTypes (20100808211719)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "creator_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "item_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_creator_types_on_item_type_id" ON "creator_types" ("item_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808211719')[0m
+Migrating to CreateItemTypes (20100808212220)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "item_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808212220')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("creator_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("creators")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_creators_on_name')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("item_creators")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("item_keys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("item_types")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("items")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_items_on_rating')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_year')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_name')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("key_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;36;1mItemType Create (0.4ms)[0m   [0;1mINSERT INTO "item_types" ("name", "created_at", "updated_at") VALUES('test', '2010-08-08 21:44:48', '2010-08-08 21:44:48')[0m
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-08-08 17:57:01) [GET]
+  [4;36;1mItemType Load (0.8ms)[0m   [0;1mSELECT * FROM "item_types" [0m
+Rendering item_types/index
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-08-08 17:57:44) [GET]
+  [4;35;1mItemType Load (0.7ms)[0m   [0mSELECT * FROM "item_types" [0m
+Rendering item_types/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing ItemTypesController#new (for 127.0.0.1 at 2010-08-08 17:57:47) [GET]
+Rendering item_types/action
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/item_types/new]
+
+
+Processing ItemTypesController#new (for 127.0.0.1 at 2010-08-08 18:03:43) [GET]
+Rendering item_types/action
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/item_types/new]
+
+
+Processing ItemTypesController#create (for 127.0.0.1 at 2010-08-08 18:04:00) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"X25oBo3walJ5Pn3QbQDN6gCcESplNPTm5dfWM1r+YVA=", "item_type"=>{"name"=>"Graphic Novel"}}
+  [4;36;1mItemType Create (0.4ms)[0m   [0;1mINSERT INTO "item_types" ("name", "created_at", "updated_at") VALUES('Graphic Novel', '2010-08-08 22:04:00', '2010-08-08 22:04:00')[0m
+Redirected to http://localhost:3000/item_types
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/item_types]
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-08-08 18:04:00) [GET]
+  [4;35;1mItemType Load (0.7ms)[0m   [0mSELECT * FROM "item_types" [0m
+Rendering item_types/index
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing ItemTypesController#new (for 127.0.0.1 at 2010-08-08 18:04:03) [GET]
+Rendering item_types/action
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/item_types/new]
+
+
+Processing ItemTypesController#create (for 127.0.0.1 at 2010-08-08 18:04:12) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"X25oBo3walJ5Pn3QbQDN6gCcESplNPTm5dfWM1r+YVA=", "item_type"=>{"name"=>"Music"}}
+  [4;36;1mItemType Create (0.3ms)[0m   [0;1mINSERT INTO "item_types" ("name", "created_at", "updated_at") VALUES('Music', '2010-08-08 22:04:12', '2010-08-08 22:04:12')[0m
+Redirected to http://localhost:3000/item_types
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/item_types]
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-08-08 18:04:12) [GET]
+  [4;35;1mItemType Load (0.7ms)[0m   [0mSELECT * FROM "item_types" [0m
+Rendering item_types/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing ItemTypesController#new (for 127.0.0.1 at 2010-08-08 18:04:14) [GET]
+Rendering item_types/action
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/item_types/new]
+
+
+Processing ItemTypesController#create (for 127.0.0.1 at 2010-08-08 18:04:19) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"X25oBo3walJ5Pn3QbQDN6gCcESplNPTm5dfWM1r+YVA=", "item_type"=>{"name"=>"Video"}}
+  [4;36;1mItemType Create (0.3ms)[0m   [0;1mINSERT INTO "item_types" ("name", "created_at", "updated_at") VALUES('Video', '2010-08-08 22:04:19', '2010-08-08 22:04:19')[0m
+Redirected to http://localhost:3000/item_types
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/item_types]
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-08-08 18:04:19) [GET]
+  [4;35;1mItemType Load (0.8ms)[0m   [0mSELECT * FROM "item_types" [0m
+Rendering item_types/index
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing ApplicationController#edit (for 127.0.0.1 at 2010-08-08 18:12:01) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/jinx/projects/collection/app/controllers/item_types_controller.rb:28: syntax error, unexpected tIDENTIFIER, expecting ']'
+      flash[:notice] = "#{@item_type.name} has been saved"
+           ^):
+  
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ItemTypesController#edit (for 127.0.0.1 at 2010-08-08 18:12:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mItemType Load (0.2ms)[0m   [0;1mSELECT * FROM "item_types" WHERE ("item_types"."id" = 1) ORDER BY name[0m
+Rendering item_types/action
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/item_types/1/edit]
+
+
+Processing ItemTypesController#update (for 127.0.0.1 at 2010-08-08 18:12:33) [PUT]
+  Parameters: {"commit"=>"Save Changes", "authenticity_token"=>"X25oBo3walJ5Pn3QbQDN6gCcESplNPTm5dfWM1r+YVA=", "id"=>"1", "item_type"=>{"name"=>"video game"}}
+  [4;35;1mItemType Load (0.2ms)[0m   [0mSELECT * FROM "item_types" WHERE ("item_types"."id" = 1) ORDER BY name[0m
+  [4;36;1mItemType Update (0.3ms)[0m   [0;1mUPDATE "item_types" SET "updated_at" = '2010-08-08 22:12:33', "name" = 'video game' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/item_types
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/item_types/1]
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-08-08 18:12:33) [GET]
+  [4;35;1mItemType Load (0.8ms)[0m   [0mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering item_types/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-08-08 18:38:36) [GET]
+  [4;36;1mCreatorType Load (0.7ms)[0m   [0;1mSELECT * FROM "creator_types" [0m
+Rendering creator_types/index
+Completed in 20ms (View: 16, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing CreatorTypesController#new (for 127.0.0.1 at 2010-08-08 18:38:39) [GET]
+  [4;35;1mItemType Load (0.4ms)[0m   [0mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering creator_types/action
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/creator_types/new]
+
+
+Processing CreatorTypesController#new (for 127.0.0.1 at 2010-08-08 18:41:45) [GET]
+  [4;36;1mItemType Load (0.4ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering creator_types/action
+ERROR: compiling _run_erb_app47views47creator_types47action46html46erb RAISED compile error
+/Users/jinx/projects/collection/app/views/creator_types/action.html.erb:8: syntax error, unexpected '}', expecting tCOLON2 or '[' or '.'
+...tem_type.name, item_type.name} ).to_s); @output_buffer.conca...
+                              ^
+/Users/jinx/projects/collection/app/views/creator_types/action.html.erb:11: syntax error, unexpected kEND, expecting '}'
+;  end ; @output_buffer
+      ^
+/Users/jinx/projects/collection/app/views/creator_types/action.html.erb:14: syntax error, unexpected kEND, expecting '}'
+Function body:           def _run_erb_app47views47creator_types47action46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( crud_header @creator_type ).to_s); @output_buffer.concat "\n\n"
+
+;  form_for @creator_type do |form| ; @output_buffer.concat "\n\t<dl>\n\t\t<dd>"
+
+; @output_buffer.concat(( form.label :creator_type, :name ).to_s); @output_buffer.concat "</dd>\n\t\t<dt>"
+; @output_buffer.concat(( form.text_field :name ).to_s); @output_buffer.concat "</dt>\n\t\t<dd>"
+; @output_buffer.concat(( form.label :creator_type, :item_type_id).to_s); @output_buffer.concat "</dd>\n\t\t<dt>"
+; @output_buffer.concat(( form.select :item_type_id, @item_types.map {|item_type| item_type.name, item_type.name} ).to_s); @output_buffer.concat "</dt>\n\t</dl>\n\t"
+
+; @output_buffer.concat(( crud_submit(@creator_type) ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/jinx/projects/collection/app/views/creator_types/action.html.erb:14:in `compile!'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/jinx/projects/collection/app/controllers/creator_types_controller.rb:6:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/jinx/projects/collection/app/views/creator_types/action.html.erb:8: syntax error, unexpected '}', expecting tCOLON2 or '[' or '.'
+...tem_type.name, item_type.name} ).to_s); @output_buffer.conca...
+                              ^
+/Users/jinx/projects/collection/app/views/creator_types/action.html.erb:11: syntax error, unexpected kEND, expecting '}'
+;  end ; @output_buffer
+      ^
+/Users/jinx/projects/collection/app/views/creator_types/action.html.erb:14: syntax error, unexpected kEND, expecting '}') on line #8 of app/views/creator_types/action.html.erb:
+5: 		<dd><%= form.label :creator_type, :name %></dd>
+6: 		<dt><%= form.text_field :name %></dt>
+7: 		<dd><%= form.label :creator_type, :item_type_id%></dd>
+8: 		<dt><%= form.select :item_type_id, @item_types.map {|item_type| item_type.name, item_type.name} %></dt>
+9: 	</dl>
+10: 	<%= crud_submit(@creator_type) %>
+11: <% end %>
+
+    app/views/creator_types/action.html.erb:14:in `compile!'
+    app/controllers/creator_types_controller.rb:6:in `new'
+
+Rendered rescues/_trace (52.7ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CreatorTypesController#new (for 127.0.0.1 at 2010-08-08 18:42:37) [GET]
+  [4;35;1mItemType Load (0.4ms)[0m   [0mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering creator_types/action
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/creator_types/new]
+
+
+Processing CreatorTypesController#create (for 127.0.0.1 at 2010-08-08 18:42:48) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"X25oBo3walJ5Pn3QbQDN6gCcESplNPTm5dfWM1r+YVA=", "creator_type"=>{"name"=>"illustrator", "item_type_id"=>"2"}}
+  [4;36;1mCreatorType Create (0.6ms)[0m   [0;1mINSERT INTO "creator_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('illustrator', '2010-08-08 22:42:48', '2010-08-08 22:42:48', 2)[0m
+Redirected to http://localhost:3000/creator_types
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/creator_types]
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-08-08 18:42:48) [GET]
+  [4;35;1mCreatorType Load (55.5ms)[0m   [0mSELECT * FROM "creator_types" [0m
+Rendering creator_types/index
+Completed in 62ms (View: 3, DB: 55) | 200 OK [http://localhost/creator_types]
+
+
+Processing CreatorTypesController#edit (for 127.0.0.1 at 2010-08-08 18:42:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."id" = 1) [0m
+Rendering creator_types/action
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map) on line #8 of app/views/creator_types/action.html.erb:
+5: 		<dd><%= form.label :creator_type, :name %></dd>
+6: 		<dt><%= form.text_field :name %></dt>
+7: 		<dd><%= form.label :creator_type, :item_type_id%></dd>
+8: 		<dt><%= form.select :item_type_id, @item_types.map {|item_type| [item_type.name, item_type.id]} %></dt>
+9: 	</dl>
+10: 	<%= crud_submit(@creator_type) %>
+11: <% end %>
+
+    app/views/creator_types/action.html.erb:8
+    app/views/creator_types/action.html.erb:3
+    app/controllers/creator_types_controller.rb:22:in `edit'
+
+Rendered rescues/_trace (54.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CreatorTypesController#edit (for 127.0.0.1 at 2010-08-08 18:43:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."id" = 1) [0m
+  [4;36;1mItemType Load (0.4ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering creator_types/action
+Completed in 70ms (View: 62, DB: 1) | 200 OK [http://localhost/creator_types/1/edit]
+
+
+Processing CreatorTypesController#new (for 127.0.0.1 at 2010-08-08 18:43:31) [GET]
+  [4;35;1mItemType Load (0.4ms)[0m   [0mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering creator_types/action
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/creator_types/new]
+
+
+Processing CreatorTypesController#create (for 127.0.0.1 at 2010-08-08 18:43:44) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"X25oBo3walJ5Pn3QbQDN6gCcESplNPTm5dfWM1r+YVA=", "creator_type"=>{"name"=>"director", "item_type_id"=>"4"}}
+  [4;36;1mCreatorType Create (0.4ms)[0m   [0;1mINSERT INTO "creator_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('director', '2010-08-08 22:43:44', '2010-08-08 22:43:44', 4)[0m
+Redirected to http://localhost:3000/creator_types
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/creator_types]
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-08-08 18:43:44) [GET]
+  [4;35;1mCreatorType Load (0.7ms)[0m   [0mSELECT * FROM "creator_types" [0m
+Rendering creator_types/index
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing CreatorTypesController#edit (for 127.0.0.1 at 2010-08-08 18:43:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."id" = 2) [0m
+  [4;35;1mItemType Load (0.6ms)[0m   [0mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering creator_types/action
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/creator_types/2/edit]
