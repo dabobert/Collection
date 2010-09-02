@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Collections <% unless @page_title.nil? -%> :: <%= @page_title %><% end -%></title>
+  <%= stylesheet_link_tag 'collection', :cache => true %>
+    
+  <%#= javascript_include_tag 'jquery-1.4.2.min.js', :cache => true %>
+  <%#= javascript_include_tag "jquery.labelify.js", :cache => true %>
+  <%= javascript_include_tag 'application.js' %>
+
+  <% if @extra_head -%>
+	  <%= yield :extra_head %>
+  <% end -%>
+</head>
+<body <%= "id=\"#{@custom_body_id}\"" unless @custom_body_id.nil? %>>
+  
+<%= render :partial => 'layouts/navigation' %>
+<%= yield %>
+  
+</body>
+</html>

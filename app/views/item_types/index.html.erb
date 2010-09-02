@@ -1,5 +1,5 @@
 <%= link_to "new", new_item_type_path %>
-
+<h2>Item Types</h2>
 <ul>
 	<% @item_types.each do |item_type| %>
 		<li><%= link_to item_type.name, edit_item_type_path(item_type) %></li>

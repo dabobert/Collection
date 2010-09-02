@@ -406,3 +406,308 @@ Processing CreatorTypesController#edit (for 127.0.0.1 at 2010-08-08 18:43:45) [G
   [4;35;1mItemType Load (0.6ms)[0m   [0mSELECT * FROM "item_types" ORDER BY name[0m
 Rendering creator_types/action
 Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/creator_types/2/edit]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2010-09-01 19:48:06) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2010-09-01 19:50:22) [GET]
+Rendering items/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2010-09-01 19:58:01) [GET]
+Rendering template within layouts/application
+Rendering items/index
+
+ActionView::TemplateError (Missing layout layouts/_navigation.erb in view path app/views) on line #19 of app/views/layouts/application.html.erb:
+16: </head>
+17: <body <%= "id=\"#{@custom_body_id}\"" unless @custom_body_id.nil? %>>
+18:   
+19: <%= render :partial => 'layouts/navigation' %>
+20: <%= yield %>
+21:   
+22: </body>
+
+    app/views/layouts/application.html.erb:19
+
+Rendered rescues/_trace (58.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2010-09-01 19:58:24) [GET]
+Rendering template within layouts/application
+Rendering items/index
+Rendered layouts/_navigation (0.8ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:58:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2010-09-01 19:58:28) [GET]
+Rendering template within layouts/application
+Rendering items/index
+Rendered layouts/_navigation (0.3ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:58:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-09-01 19:58:29) [GET]
+  [4;36;1mCreatorType Load (0.8ms)[0m   [0;1mSELECT * FROM "creator_types" [0m
+Rendering template within layouts/application
+Rendering creator_types/index
+Rendered layouts/_navigation (0.2ms)
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:58:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-09-01 19:58:32) [GET]
+  [4;35;1mItemType Load (0.8ms)[0m   [0mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering item_types/index
+Rendered layouts/_navigation (0.3ms)
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:58:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-09-01 19:58:36) [GET]
+  [4;36;1mCreatorType Load (0.8ms)[0m   [0;1mSELECT * FROM "creator_types" [0m
+Rendering template within layouts/application
+Rendering creator_types/index
+Rendered layouts/_navigation (0.3ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:58:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#edit (for 127.0.0.1 at 2010-09-01 19:58:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."id" = 1) [0m
+  [4;36;1mItemType Load (0.4ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering creator_types/action
+Rendered layouts/_navigation (0.3ms)
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/creator_types/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:58:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-09-01 19:59:39) [GET]
+  [4;35;1mCreatorType Load (0.7ms)[0m   [0mSELECT * FROM "creator_types" [0m
+Rendering template within layouts/application
+Rendering creator_types/index
+Rendered layouts/_navigation (0.3ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:59:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#new (for 127.0.0.1 at 2010-09-01 19:59:45) [GET]
+  [4;36;1mItemType Load (0.4ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering creator_types/action
+Rendered layouts/_navigation (0.3ms)
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/creator_types/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:59:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#create (for 127.0.0.1 at 2010-09-01 19:59:55) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"v1rui2M/GASqjGxYrt0tsrV49FSWAHd4FzhaPni46j0=", "creator_type"=>{"name"=>"write", "item_type_id"=>"2"}}
+  [4;35;1mCreatorType Create (0.5ms)[0m   [0mINSERT INTO "creator_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('write', '2010-09-01 23:59:55', '2010-09-01 23:59:55', 2)[0m
+Redirected to http://localhost:3000/creator_types
+Completed in 60ms (DB: 0) | 302 Found [http://localhost/creator_types]
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-09-01 19:59:56) [GET]
+  [4;36;1mCreatorType Load (0.8ms)[0m   [0;1mSELECT * FROM "creator_types" [0m
+Rendering template within layouts/application
+Rendering creator_types/index
+Rendered layouts/_navigation (0.2ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:59:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#edit (for 127.0.0.1 at 2010-09-01 19:59:57) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."id" = 3) [0m
+  [4;36;1mItemType Load (0.4ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering creator_types/action
+Rendered layouts/_navigation (0.3ms)
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/creator_types/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:59:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#update (for 127.0.0.1 at 2010-09-01 19:59:59) [PUT]
+  Parameters: {"commit"=>"Save Changes", "authenticity_token"=>"v1rui2M/GASqjGxYrt0tsrV49FSWAHd4FzhaPni46j0=", "id"=>"3", "creator_type"=>{"name"=>"writer", "item_type_id"=>"2"}}
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."id" = 3) [0m
+  [4;36;1mCreatorType Update (0.3ms)[0m   [0;1mUPDATE "creator_types" SET "updated_at" = '2010-09-01 23:59:59', "name" = 'writer' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/creator_types
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/creator_types/3]
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-09-01 19:59:59) [GET]
+  [4;35;1mCreatorType Load (0.8ms)[0m   [0mSELECT * FROM "creator_types" [0m
+Rendering template within layouts/application
+Rendering creator_types/index
+Rendered layouts/_navigation (0.2ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 19:59:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#new (for 127.0.0.1 at 2010-09-01 20:00:06) [GET]
+  [4;36;1mItemType Load (0.4ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering creator_types/action
+Rendered layouts/_navigation (0.3ms)
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/creator_types/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 20:00:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#create (for 127.0.0.1 at 2010-09-01 20:00:11) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"v1rui2M/GASqjGxYrt0tsrV49FSWAHd4FzhaPni46j0=", "creator_type"=>{"name"=>"artist", "item_type_id"=>"2"}}
+  [4;35;1mCreatorType Create (0.4ms)[0m   [0mINSERT INTO "creator_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('artist', '2010-09-02 00:00:11', '2010-09-02 00:00:11', 2)[0m
+Redirected to http://localhost:3000/creator_types
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/creator_types]
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-09-01 20:00:11) [GET]
+  [4;36;1mCreatorType Load (0.8ms)[0m   [0;1mSELECT * FROM "creator_types" [0m
+Rendering template within layouts/application
+Rendering creator_types/index
+Rendered layouts/_navigation (0.2ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 20:00:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CreatorTypesController#index (for 127.0.0.1 at 2010-09-01 20:06:53) [GET]
+  [4;35;1mCreatorType Load (0.8ms)[0m   [0mSELECT * FROM "creator_types" [0m
+Rendering template within layouts/application
+Rendering creator_types/index
+Rendered layouts/_navigation (0.8ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/creator_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 20:06:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ItemTypesController#index (for 127.0.0.1 at 2010-09-01 20:06:55) [GET]
+  [4;36;1mItemType Load (0.8ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering item_types/index
+Rendered layouts/_navigation (0.3ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/item_types]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-01 20:06:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/collection.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m

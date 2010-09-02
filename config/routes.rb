@@ -36,6 +36,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :items
   map.resources :item_types
   map.resources :creator_types
+  map.resources :creators
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

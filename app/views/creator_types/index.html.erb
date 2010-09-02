@@ -1,5 +1,5 @@
 <%= link_to "new", new_creator_type_path %>
-
+<h2>Creator Types</h2>
 <ul>
 	<% @creator_types.each do |creator_type| %>
 		<li><%= link_to creator_type.name, edit_creator_type_path(creator_type) %></li>
