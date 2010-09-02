@@ -7,4 +7,6 @@ class Item < ActiveRecord::Base
   
   belongs_to :item_type
   default_scope :order=>:name
+  
+  accepts_nested_attributes_for :item_creators
 end

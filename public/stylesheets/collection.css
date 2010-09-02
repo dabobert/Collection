@@ -1,0 +1,16 @@
+dl {
+	max-width: 490px;
+}
+
+dl dt {
+	display: inline-block;
+	width: 100px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+dl dd {
+	display: inline-block;
+	margin: 0;
+	width: 280px;
+}

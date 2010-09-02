@@ -1,0 +1,6 @@
+<tr>
+	<td>artist</td>
+	<td><%= item_creator_form.select :creator_type_id, @creator_types %></td>
+	<td><%= item_creator_form.checkbox :destroy unless item_creator.new_record? %>
+</tr>
+	

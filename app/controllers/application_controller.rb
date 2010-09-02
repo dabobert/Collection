@@ -7,4 +7,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  
+  def item_types_list
+    ItemType.all.collect { |i| [ i.name, i.id ] }
+  end
+  
+  def creator_types_list
+    CreatorType.all.collect { |i| [ i.name, i.id ] }
+  end
+  
+  def key_types_list
+    KeyType.all.collect { |i| [ i.name, i.id ] }
+  end
 end
