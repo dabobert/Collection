@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902011221) do
+ActiveRecord::Schema.define(:version => 20100913010248) do
 
   create_table "creator_types", :force => true do |t|
     t.string   "name"
@@ -42,13 +42,14 @@ ActiveRecord::Schema.define(:version => 20100902011221) do
 
   create_table "item_keys", :force => true do |t|
     t.integer  "item_id"
-    t.integer  "key_id"
+    t.integer  "key_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "value"
   end
 
   add_index "item_keys", ["item_id"], :name => "index_item_keys_on_item_id"
-  add_index "item_keys", ["key_id"], :name => "index_item_keys_on_key_id"
+  add_index "item_keys", ["key_type_id"], :name => "index_item_keys_on_key_id"
 
   create_table "item_types", :force => true do |t|
     t.string   "name"
@@ -61,8 +62,14 @@ ActiveRecord::Schema.define(:version => 20100902011221) do
     t.float    "rating"
     t.integer  "year"
     t.integer  "item_type_id"
+    t.string   "location"
+    t.string   "artwork"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "publication_date"
+    t.string   "image"
+    t.integer  "image_width"
+    t.integer  "image_height"
   end
 
   add_index "items", ["item_type_id"], :name => "index_items_on_item_type_id"
@@ -78,5 +85,19 @@ ActiveRecord::Schema.define(:version => 20100902011221) do
   end
 
   add_index "key_types", ["item_type_id"], :name => "index_key_types_on_item_type_id"
+
+  create_table "metadata", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "metadata_type_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "metadata_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -1452,3 +1452,928 @@ Rendered layouts/_navigation (0.3ms)
 Completed in 93ms (View: 9, DB: 2) | 200 OK [http://localhost/items/1/edit]
   [4;35;1mItemCreator Load (0.5ms)[0m   [0mSELECT * FROM "item_creators" WHERE ("item_creators".item_id = 1) [0m
   [4;36;1mCreatorType Load (0.3ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."id" = 3) [0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2010-09-10 18:54:26) [GET]
+  [4;36;1mItem Load (1.6ms)[0m   [0;1mSELECT * FROM "items" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering items/index
+  [4;35;1mItemType Load (0.6ms)[0m   [0mSELECT * FROM "item_types" WHERE ("item_types"."id" = 2) ORDER BY name[0m
+Rendered layouts/_navigation (1.3ms)
+Completed in 122ms (View: 100, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing ItemsController#edit (for 127.0.0.1 at 2010-09-11 02:25:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mItemType Load (1.9ms)[0m   [0;1mSELECT * FROM "item_types" ORDER BY name[0m
+  [4;35;1mCreatorType Load (1.0ms)[0m   [0mSELECT * FROM "creator_types" [0m
+  [4;36;1mKeyType Load (1.1ms)[0m   [0;1mSELECT * FROM "key_types" ORDER BY name[0m
+
+SyntaxError (/Users/jinx/projects/collection/app/models/item.rb:33: syntax error, unexpected kEND, expecting $end):
+  app/controllers/items_controller.rb:21:in `edit'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mItemKey Load (1.5ms)[0m   [0mSELECT * FROM "item_keys" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'UPC') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Create (0.5ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('UPC', '2010-09-11 06:41:30', '2010-09-11 06:41:30', NULL)[0m
+  [4;36;1mKeyType Load (0.6ms)[0m   [0;1mSELECT * FROM "key_types" ORDER BY name[0m
+  [4;35;1mKeyType Load (0.4ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'UPC') ORDER BY name LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mKeyType Load (0.4ms)[0m   [0mSELECT * FROM "key_types" ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'A') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Create (0.4ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('A', '2010-09-11 07:32:04', '2010-09-11 07:32:04', NULL)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+Migrating to CreateCreators (20100808211038)
+Migrating to CreateItemCreators (20100808211135)
+Migrating to CreateItemKeys (20100808211408)
+Migrating to CreateKeyTypes (20100808211518)
+Migrating to CreateCreatorTypes (20100808211719)
+Migrating to CreateItemTypes (20100808212220)
+Migrating to MakeKeyTypes (20100902011221)
+Migrating to FixItemKeyModel (20100911073921)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "item_keys" ADD "value" varchar(255)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_item_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "key_type_id" integer, "created_at" datetime, "updated_at" datetime, "value" varchar(255)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("item_keys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "temp_index_altered_item_keys_on_key_id" ON "altered_item_keys" ("key_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "temp_index_altered_item_keys_on_item_id" ON "altered_item_keys" ("item_id")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mDROP TABLE "item_keys"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "item_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "key_type_id" integer, "created_at" datetime, "updated_at" datetime, "value" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_item_keys_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_item_keys_on_key_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_item_keys_on_item_id" ON "item_keys" ("item_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_keys_on_key_id" ON "item_keys" ("key_type_id")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "altered_item_keys"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100911073921')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Create (0.4ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('ISBN', '2010-09-11 07:48:20', '2010-09-11 07:48:20', NULL)[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Create (0.3ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('ASIN', '2010-09-11 07:48:20', '2010-09-11 07:48:20', NULL)[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Create (0.3ms)[0m   [0mINSERT INTO "creators" ("name", "created_at", "updated_at") VALUES('BRIAN MICHAEL BENDIS', '2010-09-11 07:48:20', '2010-09-11 07:48:20')[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mCreatorType Create (0.3ms)[0m   [0mINSERT INTO "creator_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('AUTHOR', '2010-09-11 07:48:20', '2010-09-11 07:48:20', NULL)[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Create (0.3ms)[0m   [0mINSERT INTO "creators" ("name", "created_at", "updated_at") VALUES('MICHAEL AVON OEMING', '2010-09-11 07:48:20', '2010-09-11 07:48:20')[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.3ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mItem Create (0.7ms)[0m   [0;1mINSERT INTO "items" ("name", "rating", "created_at", "updated_at", "year", "item_type_id") VALUES('Powers Volume 1: Who Killed Retro Girl?: Who Killed Retro Girl? v. 1', NULL, '2010-09-11 07:52:59', '2010-09-11 07:52:59', NULL, NULL)[0m
+  [4;35;1mItemCreator Create (0.3ms)[0m   [0mINSERT INTO "item_creators" ("created_at", "updated_at", "creator_type_id", "creator_id", "item_id") VALUES('2010-09-11 07:52:59', '2010-09-11 07:52:59', 5, 2, 2)[0m
+  [4;36;1mItemCreator Create (0.1ms)[0m   [0;1mINSERT INTO "item_creators" ("created_at", "updated_at", "creator_type_id", "creator_id", "item_id") VALUES('2010-09-11 07:52:59', '2010-09-11 07:52:59', 5, 3, 2)[0m
+  [4;35;1mItemKey Create (0.3ms)[0m   [0mINSERT INTO "item_keys" ("created_at", "updated_at", "key_type_id", "value", "item_id") VALUES('2010-09-11 07:52:59', '2010-09-11 07:52:59', 9, '1582401837', 2)[0m
+  [4;36;1mItemKey Create (0.1ms)[0m   [0;1mINSERT INTO "item_keys" ("created_at", "updated_at", "key_type_id", "value", "item_id") VALUES('2010-09-11 07:52:59', '2010-09-11 07:52:59', 10, '', 2)[0m
+  [4;35;1mKeyType Load (0.4ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+Migrating to CreateCreators (20100808211038)
+Migrating to CreateItemCreators (20100808211135)
+Migrating to CreateItemKeys (20100808211408)
+Migrating to CreateKeyTypes (20100808211518)
+Migrating to CreateCreatorTypes (20100808211719)
+Migrating to CreateItemTypes (20100808212220)
+Migrating to MakeKeyTypes (20100902011221)
+Migrating to FixItemKeyModel (20100911073921)
+Migrating to AddPublicationDateToItem (20100912191755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "items" ADD "date" date[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100912191755')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+Migrating to CreateCreators (20100808211038)
+Migrating to CreateItemCreators (20100808211135)
+Migrating to CreateItemKeys (20100808211408)
+Migrating to CreateKeyTypes (20100808211518)
+Migrating to CreateCreatorTypes (20100808211719)
+Migrating to CreateItemTypes (20100808212220)
+Migrating to MakeKeyTypes (20100902011221)
+Migrating to FixItemKeyModel (20100911073921)
+Migrating to AddPublicationDateToItem (20100912191755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+Migrating to CreateCreators (20100808211038)
+Migrating to CreateItemCreators (20100808211135)
+Migrating to CreateItemKeys (20100808211408)
+Migrating to CreateKeyTypes (20100808211518)
+Migrating to CreateCreatorTypes (20100808211719)
+Migrating to CreateItemTypes (20100808212220)
+Migrating to MakeKeyTypes (20100902011221)
+Migrating to FixItemKeyModel (20100911073921)
+Migrating to AddPublicationDateToItem (20100912191755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddPublicationDateToItem (20100912191755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "rating" float, "year" integer, "item_type_id" integer, "created_at" datetime, "updated_at" datetime, "date" date) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "temp_index_altered_items_on_rating" ON "altered_items" ("rating")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "temp_index_altered_items_on_year" ON "altered_items" ("year")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "temp_index_altered_items_on_item_type_id" ON "altered_items" ("item_type_id")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "temp_index_altered_items_on_name" ON "altered_items" ("name")[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "items"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "rating" float, "year" integer, "item_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("altered_items")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_items_on_name" ON "items" ("name")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_items_on_item_type_id" ON "items" ("item_type_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_items_on_year" ON "items" ("year")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_items_on_rating" ON "items" ("rating")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_items"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100912191755'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("creator_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("creators")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_creators_on_name')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("item_creators")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("item_keys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("item_types")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("items")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_rating')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_year')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_name')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("key_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;35;1mMetadatum Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: metadata: SELECT * FROM "metadata" WHERE ("metadata".item_id = 1) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+Migrating to CreateCreators (20100808211038)
+Migrating to CreateItemCreators (20100808211135)
+Migrating to CreateItemKeys (20100808211408)
+Migrating to CreateKeyTypes (20100808211518)
+Migrating to CreateCreatorTypes (20100808211719)
+Migrating to CreateItemTypes (20100808212220)
+Migrating to MakeKeyTypes (20100902011221)
+Migrating to FixItemKeyModel (20100911073921)
+Migrating to AddPublicationDateToItem (20100912192134)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "items" ADD "publication_date" date[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100912192134')[0m
+Migrating to CreateMetadataTypes (20100912195923)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "metadata_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100912195923')[0m
+Migrating to CreateMetadata (20100912202754)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "metadata" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "metadata_type_id" integer, "value" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100912202754')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("metadata")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("metadata_types")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;36;1mMetadatum Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata" WHERE ("metadata".item_id = 1) [0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mKeyType Load (2.4ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mKeyType Load (0.4ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mKeyType Load (1.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (2.0ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.4ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mMetadataType Load (1.9ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;35;1mMetadataType Create (1.1ms)[0m   [0mINSERT INTO "metadata_types" ("name", "created_at", "updated_at") VALUES('PUBLISHER', '2010-09-13 00:38:39', '2010-09-13 00:38:39')[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mMetadataType Load (0.2ms)[0m   [0mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.2ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.2ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+Migrating to CreateCreators (20100808211038)
+Migrating to CreateItemCreators (20100808211135)
+Migrating to CreateItemKeys (20100808211408)
+Migrating to CreateKeyTypes (20100808211518)
+Migrating to CreateCreatorTypes (20100808211719)
+Migrating to CreateItemTypes (20100808212220)
+Migrating to MakeKeyTypes (20100902011221)
+Migrating to FixItemKeyModel (20100911073921)
+Migrating to AddPublicationDateToItem (20100912192134)
+Migrating to CreateMetadataTypes (20100912195923)
+Migrating to CreateMetadata (20100912202754)
+Migrating to AddImageInfoToItem (20100913010147)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "items" ADD "image" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "items" ADD "width" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "items" ADD "height" integer[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100913010147')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metadata")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("metadata_types")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metadata")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("metadata_types")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metadata")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("metadata_types")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metadata")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("metadata_types")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20100808210552)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "rating" float, "year" integer, "item_type_id" integer, "location" varchar(255), "artwork" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_items_on_name" ON "items" ("name")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_items_on_item_type_id" ON "items" ("item_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_items_on_year" ON "items" ("year")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_items_on_rating" ON "items" ("rating")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808210552')[0m
+Migrating to CreateCreators (20100808211038)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "creators" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_creators_on_name" ON "creators" ("name")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100808211038')[0m
+Migrating to CreateItemCreators (20100808211135)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "item_creators" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "creator_id" integer, "creator_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_creators_on_item_id" ON "item_creators" ("item_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_item_creators_on_creator_id" ON "item_creators" ("creator_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_creators_on_creator_type_id" ON "item_creators" ("creator_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808211135')[0m
+Migrating to CreateItemKeys (20100808211408)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "item_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "key_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_item_keys_on_item_id" ON "item_keys" ("item_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_keys_on_key_id" ON "item_keys" ("key_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808211408')[0m
+Migrating to CreateKeyTypes (20100808211518)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "key_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "item_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE INDEX "index_key_types_on_item_type_id" ON "key_types" ("item_type_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100808211518')[0m
+Migrating to CreateCreatorTypes (20100808211719)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "creator_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "item_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_creator_types_on_item_type_id" ON "creator_types" ("item_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808211719')[0m
+Migrating to CreateItemTypes (20100808212220)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "item_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100808212220')[0m
+Migrating to MakeKeyTypes (20100902011221)
+  [4;36;1mKeyType Create (0.4ms)[0m   [0;1mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('isrc', '2010-09-13 01:06:57', '2010-09-13 01:06:57', NULL)[0m
+  [4;35;1mKeyType Create (0.1ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('upc', '2010-09-13 01:06:57', '2010-09-13 01:06:57', NULL)[0m
+  [4;36;1mKeyType Create (0.1ms)[0m   [0;1mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('gpid', '2010-09-13 01:06:57', '2010-09-13 01:06:57', NULL)[0m
+  [4;35;1mKeyType Create (0.1ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('asin', '2010-09-13 01:06:57', '2010-09-13 01:06:57', NULL)[0m
+  [4;36;1mKeyType Create (0.1ms)[0m   [0;1mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('isbn', '2010-09-13 01:06:57', '2010-09-13 01:06:57', NULL)[0m
+  [4;35;1mKeyType Create (0.1ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('isbn-13', '2010-09-13 01:06:57', '2010-09-13 01:06:57', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100902011221')[0m
+Migrating to FixItemKeyModel (20100911073921)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "item_keys" ADD "value" varchar(255)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_item_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "key_type_id" integer, "created_at" datetime, "updated_at" datetime, "value" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("item_keys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "temp_index_altered_item_keys_on_key_id" ON "altered_item_keys" ("key_type_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "temp_index_altered_item_keys_on_item_id" ON "altered_item_keys" ("item_id")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "item_keys"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "item_keys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "key_type_id" integer, "created_at" datetime, "updated_at" datetime, "value" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_item_keys_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_item_keys_on_key_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_item_keys_on_item_id" ON "item_keys" ("item_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_item_keys_on_key_id" ON "item_keys" ("key_type_id")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "altered_item_keys"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100911073921')[0m
+Migrating to AddPublicationDateToItem (20100912192134)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "items" ADD "publication_date" date[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100912192134')[0m
+Migrating to CreateMetadataTypes (20100912195923)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "metadata_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100912195923')[0m
+Migrating to CreateMetadata (20100912202754)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "metadata" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer, "metadata_type_id" integer, "value" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100912202754')[0m
+Migrating to AddImageInfoToItem (20100913010248)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "items" ADD "image" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "items" ADD "image_width" integer[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mALTER TABLE "items" ADD "image_height" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100913010248')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creator_types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creator_types_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_creators_on_name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("item_creators")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_creator_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_creators_on_creator_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_creators_on_item_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("item_keys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_item_keys_on_key_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_item_keys_on_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("item_types")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_rating')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_year')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_items_on_item_type_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_items_on_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("key_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("metadata")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("metadata_types")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Create (0.4ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('ISBN', '2010-09-13 01:16:28', '2010-09-13 01:16:28', NULL)[0m
+  [4;36;1mKeyType Load (0.2ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ASIN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Create (0.3ms)[0m   [0mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('ASIN', '2010-09-13 01:16:28', '2010-09-13 01:16:28', NULL)[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'BRIAN MICHAEL BENDIS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Create (0.3ms)[0m   [0mINSERT INTO "creators" ("name", "created_at", "updated_at") VALUES('BRIAN MICHAEL BENDIS', '2010-09-13 01:16:28', '2010-09-13 01:16:28')[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mCreatorType Create (0.3ms)[0m   [0mINSERT INTO "creator_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('AUTHOR', '2010-09-13 01:16:28', '2010-09-13 01:16:28', NULL)[0m
+  [4;36;1mCreator Load (0.2ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'MICHAEL AVON OEMING') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Create (0.3ms)[0m   [0mINSERT INTO "creators" ("name", "created_at", "updated_at") VALUES('MICHAEL AVON OEMING', '2010-09-13 01:16:28', '2010-09-13 01:16:28')[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mMetadataType Load (0.1ms)[0m   [0mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;36;1mMetadataType Create (0.3ms)[0m   [0;1mINSERT INTO "metadata_types" ("name", "created_at", "updated_at") VALUES('PUBLISHER', '2010-09-13 01:16:28', '2010-09-13 01:16:28')[0m
+  [4;35;1mItemKey Load (0.9ms)[0m   [0mSELECT * FROM "item_keys" WHERE ("item_keys"."id" = 1582401837) [0m
+  [4;36;1mItemKey Load (0.3ms)[0m   [0;1mSELECT * FROM "item_keys" WHERE ("item_keys"."value" = '1582401837') LIMIT 1[0m
+  [4;35;1mItem Create (0.5ms)[0m   [0mINSERT INTO "items" ("name", "rating", "artwork", "image_height", "location", "created_at", "updated_at", "publication_date", "image_width", "year", "item_type_id", "image") VALUES('Powers Volume 1: Who Killed Retro Girl?: Who Killed Retro Girl? v. 1', NULL, NULL, 475, NULL, '2010-09-13 01:50:01', '2010-09-13 01:50:01', '2001-01-18', 306, 2001, NULL, 'http://ecx.images-amazon.com/images/I/51RQYRJ4EJL.jpg')[0m
+  [4;36;1mItemCreator Create (0.3ms)[0m   [0;1mINSERT INTO "item_creators" ("created_at", "updated_at", "creator_type_id", "creator_id", "item_id") VALUES('2010-09-13 01:50:01', '2010-09-13 01:50:01', 1, 1, 1)[0m
+  [4;35;1mItemCreator Create (0.2ms)[0m   [0mINSERT INTO "item_creators" ("created_at", "updated_at", "creator_type_id", "creator_id", "item_id") VALUES('2010-09-13 01:50:01', '2010-09-13 01:50:01', 1, 2, 1)[0m
+  [4;36;1mItemKey Create (0.2ms)[0m   [0;1mINSERT INTO "item_keys" ("created_at", "updated_at", "key_type_id", "value", "item_id") VALUES('2010-09-13 01:50:01', '2010-09-13 01:50:01', 7, '1582401837', 1)[0m
+  [4;35;1mItemKey Create (0.1ms)[0m   [0mINSERT INTO "item_keys" ("created_at", "updated_at", "key_type_id", "value", "item_id") VALUES('2010-09-13 01:50:01', '2010-09-13 01:50:01', 8, '', 1)[0m
+  [4;36;1mMetadatum Create (0.1ms)[0m   [0;1mINSERT INTO "metadata" ("created_at", "updated_at", "metadata_type_id", "value", "item_id") VALUES('2010-09-13 01:50:01', '2010-09-13 01:50:01', 1, 'Image Comics', 1)[0m
+  [4;35;1mItemKey Load (0.4ms)[0m   [0mSELECT * FROM "item_keys" WHERE ("item_keys"."value" = '1582401837') LIMIT 1[0m
+  [4;36;1mKeyType Load (0.7ms)[0m   [0;1mSELECT * FROM "key_types" ORDER BY name[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mItemKey Load (0.3ms)[0m   [0;1mSELECT * FROM "item_keys" [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" ORDER BY name[0m
+  [4;36;1mItemKey Load (0.3ms)[0m   [0;1mSELECT * FROM "item_keys" WHERE ("item_keys"."value" = '1582401837') LIMIT 1[0m
+  [4;35;1mItemKey Load (0.4ms)[0m   [0mSELECT * FROM "item_keys" WHERE ("item_keys"."value" = '1582401837') LIMIT 1[0m
+  [4;36;1mItem Load (0.4ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 1) ORDER BY name[0m
+  [4;35;1mItemKey Load (0.3ms)[0m   [0mSELECT * FROM "item_keys" WHERE ("item_keys"."value" = '1582401837a') LIMIT 1[0m
+  [4;36;1mItemKey Load (0.3ms)[0m   [0;1mSELECT * FROM "item_keys" WHERE ("item_keys"."value" = '1582401837a') LIMIT 1[0m
+  [4;35;1mItemKey Load (0.3ms)[0m   [0mSELECT * FROM "item_keys" ORDER BY item_keys.id DESC LIMIT 1[0m
+  [4;36;1mItemKey Destroy (0.5ms)[0m   [0;1mDELETE FROM "item_keys" WHERE "id" = 2[0m

@@ -1,7 +1,8 @@
-class Creator < ActiveRecord::Base
+class Creator < SingleValueModel
   has_many :item_creators
   has_many :items, :through=>:item_creators
   has_many :creator_types, :through=>:item_creators
 
   default_scope :order=>:name
+  
 end
