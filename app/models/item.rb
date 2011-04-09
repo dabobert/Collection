@@ -13,7 +13,7 @@ class Item < ActiveRecord::Base
   attr_accessor :data
   accepts_nested_attributes_for :item_creators
   
-  validates_uniqueness_of :value, :scope => :user_id
+  #validates_uniqueness_of :value, :scope => :user_id
  
   require 'amazon/aws'
   require 'amazon/aws/search'
@@ -64,11 +64,15 @@ class Item < ActiveRecord::Base
   
   def assemble_book 
     self.item_keys.build :value=>self.data.item_attributes.isbn.to_s, :key_type=>KeyType.construct("isbn")
-    self.item_keys.build(:value=>self.data.item_attributes.asin.to_s, :key_type=>KeyType.construct("asin")) unless self.data.item_attributes.asin.nil?
+    self.item_keys.build(:value=>self.data.item_attributes.asin.to_s, :key_type=>KeyType.construct("asin")) unless self.data.item_attributes.asin.blank?
+    self.item_keys.build(:value=>self.data.item_attributes.ean.to_s,  :key_type=>KeyType.construct("ean"))  unless self.data.item_attributes.ean.blank?
     self.data.item_attributes.author.each do |author|
-      self.item_creators.build :creator=>Creator.construct(author.to_s), :creator_type=>CreatorType.construct("author")
+      self.item_creators.build :creator=>Creator.construct(author.to_s.downcase), :creator_type=>CreatorType.construct("author")
     end
-    self.metadata.build :metadata_type=>MetadataType.construct("publisher"), :value=>self.data.item_attributes.publisher.to_s
+    self.metadata.build :metadata_type=>MetadataType.construct("publisher"), :value=>self.data.item_attributes.publisher.to_s.downcase
+    self.metadata.build :metadata_type=>MetadataType.construct("number_of_pages"), :value=>self.data.item_attributes.number_ofpages.to_s unless self.data.item_attributes.number_ofpages.blank?
+    self.metadata.build :metadata_type=>MetadataType.construct("publisher"), :value=>self.data.item_attributes.dewey_decimal_number.to_s unless self.data.item_attributes.dewey_decimal_number.blank?
+    
   end
   
 end

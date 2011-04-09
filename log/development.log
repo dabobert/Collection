@@ -3438,3 +3438,168 @@ Migrating to AddUserIdToItems (20110409215358)
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_key_types_on_item_type_id')[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("metadata")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("metadata_types")[0m
+
+
+Processing BooksController#create (for 127.0.0.1 at 2011-04-09 18:27:00) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"mIkQtFWS0g4XyJ9jGbzhULIf9ldQHS07MgUvqc0RYYs=", "value"=>"9781932051322", "type"=>"isbn"}
+  [4;35;1mItemType Load (0.3ms)[0m   [0mSELECT * FROM "item_types" WHERE ("item_types"."name" = 'book') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.3ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'RICK C. SPEARS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.3ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mMetadataType Load (0.3ms)[0m   [0mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;36;1mItem Create (0.5ms)[0m   [0;1mINSERT INTO "items" ("name", "rating", "artwork", "image_height", "location", "created_at", "updated_at", "publication_date", "image_width", "year", "item_type_id", "image") VALUES('Filler', NULL, NULL, 500, NULL, '2011-04-09 22:27:00', '2011-04-09 22:27:00', '2005-04-27', 333, 2005, 1, 'http://ecx.images-amazon.com/images/I/41H29YCP5RL.jpg')[0m
+  [4;35;1mItemCreator Create (0.3ms)[0m   [0mINSERT INTO "item_creators" ("created_at", "updated_at", "creator_type_id", "creator_id", "item_id") VALUES('2011-04-09 22:27:00', '2011-04-09 22:27:00', 1, 4, 3)[0m
+  [4;36;1mItemKey Create (0.3ms)[0m   [0;1mINSERT INTO "item_keys" ("created_at", "updated_at", "key_type_id", "value", "item_id") VALUES('2011-04-09 22:27:00', '2011-04-09 22:27:00', 7, '1932051325', 3)[0m
+  [4;35;1mMetadatum Create (0.2ms)[0m   [0mINSERT INTO "metadata" ("created_at", "updated_at", "metadata_type_id", "value", "item_id") VALUES('2011-04-09 22:27:00', '2011-04-09 22:27:00', 1, 'A i T/Planet Lar', 3)[0m
+Rendered books/_item (0.2ms)
+Redirected to http://localhost:3000/books/new
+Completed in 549ms (View: 1, DB: 3) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2011-04-09 18:27:00) [GET]
+Rendering template within layouts/application
+Rendering shared/action
+Rendered layouts/_navigation (0.3ms)
+Rendered layouts/_flash_messages (0.1ms)
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2011-04-09 18:31:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mItem Load (0.3ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 1) ORDER BY name[0m
+Rendered books/_item (2.7ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/books/1]
+  [4;36;1mItemType Load (0.4ms)[0m   [0;1mSELECT * FROM "item_types" WHERE ("item_types"."name" = 'book') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.3ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'RICK C. SPEARS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.3ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;35;1mMetadataType Load (0.1ms)[0m   [0mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PAGES') LIMIT 1[0m
+  [4;36;1mMetadataType Create (0.4ms)[0m   [0;1mINSERT INTO "metadata_types" ("name", "created_at", "updated_at") VALUES('PAGES', '2011-04-09 22:32:58', '2011-04-09 22:32:58')[0m
+  [4;35;1mItem Load (1.1ms)[0m   [0mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;36;1mMetadatum Load (0.3ms)[0m   [0;1mSELECT * FROM "metadata" WHERE ("metadata".item_id = 1) [0m
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;36;1mItem Destroy (0.5ms)[0m   [0;1mDELETE FROM "items" WHERE "id" = 1[0m
+
+
+Processing BooksController#new (for 127.0.0.1 at 2011-04-09 19:15:12) [GET]
+Rendering template within layouts/application
+Rendering shared/action
+Rendered layouts/_navigation (0.3ms)
+Rendered layouts/_flash_messages (0.1ms)
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2011-04-09 19:15:32) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"mIkQtFWS0g4XyJ9jGbzhULIf9ldQHS07MgUvqc0RYYs=", "value"=>"9781932051322", "type"=>"isbn"}
+  [4;35;1mItemType Load (0.2ms)[0m   [0mSELECT * FROM "item_types" WHERE ("item_types"."name" = 'book') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.2ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'EAN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Create (0.4ms)[0m   [0;1mINSERT INTO "key_types" ("name", "created_at", "updated_at", "item_type_id") VALUES('EAN', '2011-04-09 23:15:33', '2011-04-09 23:15:33', NULL)[0m
+  [4;35;1mCreator Load (0.3ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'RICK C. SPEARS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.3ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+
+NoMethodError (undefined method `metadata' for #<Item:0x1041671a0>):
+  app/models/item.rb:72:in `assemble_book'
+  app/models/item.rb:59:in `lookup'
+  app/controllers/books_controller.rb:18:in `create'
+
+Rendered rescues/_trace (105.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mItemType Load (0.3ms)[0m   [0;1mSELECT * FROM "item_types" WHERE ("item_types"."name" = 'book') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'EAN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.2ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'RICK C. SPEARS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mItemType Load (0.3ms)[0m   [0;1mSELECT * FROM "item_types" WHERE ("item_types"."name" = 'book') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'EAN') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreator Load (0.3ms)[0m   [0mSELECT * FROM "creators" WHERE ("creators"."name" = 'RICK C. SPEARS') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreatorType Load (0.2ms)[0m   [0;1mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;35;1mMetadataType Load (0.2ms)[0m   [0mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'NUMBER_OF_PAGES') LIMIT 1[0m
+  [4;35;1mMetadataType Create (0.4ms)[0m   [0mINSERT INTO "metadata_types" ("name", "created_at", "updated_at") VALUES('NUMBER_OF_PAGES', '2011-04-09 23:17:30', '2011-04-09 23:17:30')[0m
+  [4;36;1mMetadataType Load (0.3ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;35;1mItem Load (1.1ms)[0m   [0mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;35;1mItem Destroy (0.8ms)[0m   [0mDELETE FROM "items" WHERE "id" = 3[0m
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;36;1mItem Destroy (0.3ms)[0m   [0;1mDELETE FROM "items" WHERE "id" = 2[0m
+  [4;35;1mItem Load (0.3ms)[0m   [0mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+
+
+Processing BooksController#new (for 127.0.0.1 at 2011-04-09 19:17:55) [GET]
+Rendering template within layouts/application
+Rendering shared/action
+Rendered layouts/_navigation (0.4ms)
+Rendered layouts/_flash_messages (0.1ms)
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2011-04-09 19:19:12) [POST]
+  Parameters: {"commit"=>"Create!", "authenticity_token"=>"mIkQtFWS0g4XyJ9jGbzhULIf9ldQHS07MgUvqc0RYYs=", "value"=>"9781932051322", "type"=>"isbn"}
+  [4;35;1mItemType Load (0.2ms)[0m   [0mSELECT * FROM "item_types" WHERE ("item_types"."name" = 'book') ORDER BY name LIMIT 1[0m
+  [4;36;1mKeyType Load (0.3ms)[0m   [0;1mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'ISBN') ORDER BY name LIMIT 1[0m
+  [4;35;1mKeyType Load (0.3ms)[0m   [0mSELECT * FROM "key_types" WHERE ("key_types"."name" = 'EAN') ORDER BY name LIMIT 1[0m
+  [4;36;1mCreator Load (0.3ms)[0m   [0;1mSELECT * FROM "creators" WHERE ("creators"."name" = 'RICK C. SPEARS') ORDER BY name LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.3ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'AUTHOR') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;35;1mMetadataType Load (0.3ms)[0m   [0mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'NUMBER_OF_PAGES') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'PUBLISHER') LIMIT 1[0m
+  [4;35;1mItem Create (0.5ms)[0m   [0mINSERT INTO "items" ("name", "rating", "artwork", "image_height", "location", "created_at", "updated_at", "publication_date", "image_width", "year", "item_type_id", "image") VALUES('Filler', NULL, NULL, 500, NULL, '2011-04-09 23:19:13', '2011-04-09 23:19:13', '2005-04-27', 333, 2005, 1, 'http://ecx.images-amazon.com/images/I/41H29YCP5RL.jpg')[0m
+  [4;36;1mItemCreator Create (0.3ms)[0m   [0;1mINSERT INTO "item_creators" ("created_at", "updated_at", "creator_type_id", "creator_id", "item_id") VALUES('2011-04-09 23:19:13', '2011-04-09 23:19:13', 1, 4, 4)[0m
+  [4;35;1mItemKey Create (0.2ms)[0m   [0mINSERT INTO "item_keys" ("created_at", "updated_at", "key_type_id", "value", "item_id") VALUES('2011-04-09 23:19:13', '2011-04-09 23:19:13', 7, '1932051325', 4)[0m
+  [4;36;1mItemKey Create (0.1ms)[0m   [0;1mINSERT INTO "item_keys" ("created_at", "updated_at", "key_type_id", "value", "item_id") VALUES('2011-04-09 23:19:13', '2011-04-09 23:19:13', 9, '9781932051322', 4)[0m
+  [4;35;1mMetadatum Create (0.2ms)[0m   [0mINSERT INTO "metadata" ("created_at", "updated_at", "metadata_type_id", "value", "item_id") VALUES('2011-04-09 23:19:13', '2011-04-09 23:19:13', 1, 'A i T/Planet Lar', 4)[0m
+  [4;36;1mMetadatum Create (0.1ms)[0m   [0;1mINSERT INTO "metadata" ("created_at", "updated_at", "metadata_type_id", "value", "item_id") VALUES('2011-04-09 23:19:13', '2011-04-09 23:19:13', 3, '96', 4)[0m
+  [4;35;1mMetadatum Create (0.1ms)[0m   [0mINSERT INTO "metadata" ("created_at", "updated_at", "metadata_type_id", "value", "item_id") VALUES('2011-04-09 23:19:13', '2011-04-09 23:19:13', 1, '741', 4)[0m
+Rendered books/_item (0.7ms)
+Redirected to http://localhost:3000/books/new
+Completed in 561ms (View: 5, DB: 3) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2011-04-09 19:19:13) [GET]
+Rendering template within layouts/application
+Rendering shared/action
+Rendered layouts/_navigation (0.3ms)
+Rendered layouts/_flash_messages (0.1ms)
+Completed in 85ms (View: 73, DB: 0) | 200 OK [http://localhost/books/new]
+  [4;36;1mItem Load (0.4ms)[0m   [0;1mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;35;1mMetadatum Load (0.7ms)[0m   [0mSELECT * FROM "metadata" WHERE ("metadata".item_id = 4) [0m
+  [4;36;1mMetadatum Load (0.5ms)[0m   [0;1mSELECT * FROM "metadata" WHERE ("metadata".item_id = 4) [0m
+  [4;35;1mMetadataType Load (0.3ms)[0m   [0mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'author') LIMIT 1[0m
+  [4;36;1mMetadataType Load (0.2ms)[0m   [0;1mSELECT * FROM "metadata_types" WHERE ("metadata_types"."name" = 'author') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mMetadataType Load (1.0ms)[0m   [0;1mSELECT * FROM "metadata_types" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mItemCreator Load (0.6ms)[0m   [0;1mSELECT * FROM "item_creators" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mCreatorType Load (0.3ms)[0m   [0;1mSELECT * FROM "creator_types" [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mCreatorType Load (0.3ms)[0m   [0mSELECT * FROM "creator_types" ORDER BY creator_types.id DESC LIMIT 1[0m
+  [4;36;1mItem Load (0.4ms)[0m   [0;1mSELECT * FROM "items" ORDER BY name DESC LIMIT 1[0m
+  [4;35;1mCreator Load (0.4ms)[0m   [0mSELECT "creators".* FROM "creators" INNER JOIN "item_creators" ON "creators".id = "item_creators".creator_id WHERE (("item_creators".item_id = 4)) ORDER BY name[0m
+  [4;36;1mItemCreator Load (1.0ms)[0m   [0;1mSELECT * FROM "item_creators" WHERE ("item_creators".item_id = 4) [0m
+  [4;35;1mItemCreator Load (0.4ms)[0m   [0mSELECT * FROM "item_creators" WHERE ("item_creators".item_id = 4) [0m
+  [4;36;1mItemCreator Load (0.4ms)[0m   [0;1mSELECT * FROM "item_creators" WHERE ("item_creators".item_id = 4) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mCreatorType Load (0.4ms)[0m   [0;1mSELECT * FROM "creator_types" ORDER BY creator_types.id DESC LIMIT 1[0m
+  [4;35;1mCreatorType Load (0.3ms)[0m   [0mSELECT * FROM "creator_types" WHERE ("creator_types"."name" = 'author') LIMIT 1[0m
+  [4;36;1mItemCreator Load (0.1ms)[0m   [0;1mSELECT * FROM "item_creators" WHERE ("item_creators".item_id = 4 AND (creator_type_id = NULL)) [0m

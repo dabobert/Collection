@@ -18,7 +18,6 @@ class BooksController < ApplicationController
     @item = Item.lookup @type, @value
     begin
       @item.save!
-      @item.user_id = 1
       flash[:notice] = render_to_string :partial=>"item", :object=>@item
       redirect_to :action=>:new
     rescue ActiveRecord::RecordInvalid
@@ -33,6 +32,8 @@ class BooksController < ApplicationController
   
   
   def show
+    @item = Item.find(params[:id])
+    render :partial=>"item", :object=>@item
   end
   
   private
