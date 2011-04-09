@@ -20,4 +20,9 @@ class ApplicationController < ActionController::Base
   def key_types_list
     KeyType.all.collect { |i| [ i.name, i.id ] }
   end
+  
+  def crud_submit(object)
+	  submit_tag "#{object.new_record? ? "Create!" : "Save Changes"}", :id=>"submit_"+object.class.name, :class=>"save"
+	end
+	
 end

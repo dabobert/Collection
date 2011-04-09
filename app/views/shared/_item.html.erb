@@ -1,0 +1,6 @@
+<% form_for @item do |form| %>
+  <%= form.error_messages %>
+	<%= form.label :value %>
+	<%= form.text_field :value  %>
+	<%= hidden_field_tag :type, @type %>
+<% end %>

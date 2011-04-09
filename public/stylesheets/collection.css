@@ -14,3 +14,14 @@ dl dd {
 	margin: 0;
 	width: 280px;
 }
+
+
+.pron .boldface {
+    font-weight: 700;
+}
+
+.pron .ital-inline {
+    display: inline;
+    font-family: Georgia,Verdana,Arial,Helvetica,sans-serif;
+    font-style: italic;
+}

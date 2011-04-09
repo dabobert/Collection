@@ -51,17 +51,25 @@ class Debug
   end
   
   
+  def self.foo
+    self.lookup(type="UPC", key="724383771509")
+  end
   
+  def self.isbn
+    "9781582401836"
+  end
   
   def self.lookup(type="ASIN", key="B001COU9I6")
     if type =="ASIN"
       il = ItemLookup.new( type, { 'ItemId' => key,'MerchantId' => 'Amazon' })
+    elsif type == "UPC"
+      il = ItemLookup.new( type, { 'ItemId' => key,'MerchantId' => 'Amazon',"SearchIndex"=>"Music", "IdTypeSpecified"=>"true" })
     else
       il = ItemLookup.new( type, { 'ItemId' => key,'MerchantId' => 'Amazon',"SearchIndex"=>"All" })
     end
     rg = ResponseGroup.new( 'Medium' )
     req = Request.new(KEY_ID, ASSOCIATES_ID)
-    puts req
+    #puts req
     
     resp = req.search( il, rg)
     item = resp.item_lookup_response[0].items[0].item
@@ -77,4 +85,49 @@ class Debug
 =end
   end
   
+
+  def self.baby
+    is = ItemSearch.new( 'Baby',
+      {
+        'Keywords' => 'pants',
+        'MinimumPrice' => '2500',
+        'MaximumPrice' => '4999'
+      } )
+    is.response_group = ResponseGroup.new( 'Small' )
+
+    req = Request.new
+    req.locale = 'us'
+
+    resp = req.search( is )
+    items = resp.item_search_response[0].items[0].item
+
+    items.each { |item| puts item, '' }
+  end
+  
+  
+  #054391982629
+  #http://www.browsenodes.com/upc.php?upc=078636512822&tag=harrynilsson-20&keywords=Harry+Nilsson
+  
+  #B001COU9I6
+  #http://www.amazon.co.uk/dp/B001COU9I6
+  #http://www.amazon.com/dp/B001COU9I6
+  #http://www.browsenodes.com/upc.php?upc=054391982629&tag=harrynilsson-20&keywords=Harry+Nilsson
+  #http://www.browsenodes.com/upc.php?upc=054391982629&tag=harrynilsson-20&keywords=Harry+Nilsson
+  def self.mp3
+    is = ItemSearch.new( 'Baby',
+      {
+        'Keywords' => 'pants',
+        'MinimumPrice' => '2500',
+        'MaximumPrice' => '4999'
+      } )
+    is.response_group = ResponseGroup.new( 'Small' )
+
+    req = Request.new
+    req.locale = 'us'
+
+    resp = req.search( is )
+    items = resp.item_search_response[0].items[0].item
+
+    items.each { |item| puts item, '' }
+  end
 end

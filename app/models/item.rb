@@ -12,6 +12,8 @@ class Item < ActiveRecord::Base
   
   attr_accessor :data
   accepts_nested_attributes_for :item_creators
+  
+  validates_uniqueness_of :value, :scope => :user_id
  
   require 'amazon/aws'
   require 'amazon/aws/search'
@@ -27,6 +29,7 @@ class Item < ActiveRecord::Base
   end
   
   def self.aws_lookup type, value
+    type.upcase!
     if type =="ASIN"
       il = ItemLookup.new( type, { 'ItemId' => value,'MerchantId' => 'Amazon' })
     else
@@ -41,12 +44,13 @@ class Item < ActiveRecord::Base
     item = resp.item_lookup_response[0].items.item
   end
   
+  
   def self.lookup type, value
     data = Item.aws_lookup type, value
     item = Item.new :name=>data.item_attributes.title.to_s,
                 :publication_date =>data.item_attributes.publication_date.to_s,
                 :image=>data.large_image.url.to_s,
-                :item_type=>data.item_attributes.product_group.to_s.downcase,
+                :item_type=>ItemType.construct(data.item_attributes.product_group.to_s.downcase),
                 :year=>data.item_attributes.publication_date.to_s.to_date.year,
                 :image_width=>data.large_image.width.to_s,
                 :image_height=>data.large_image.height.to_s
@@ -59,9 +63,8 @@ class Item < ActiveRecord::Base
   end
   
   def assemble_book 
-      KeyType.find(:all, :condit)
     self.item_keys.build :value=>self.data.item_attributes.isbn.to_s, :key_type=>KeyType.construct("isbn")
-    self.item_keys.build :value=>self.data.item_attributes.asin.to_s, :key_type=>KeyType.construct("asin")
+    self.item_keys.build(:value=>self.data.item_attributes.asin.to_s, :key_type=>KeyType.construct("asin")) unless self.data.item_attributes.asin.nil?
     self.data.item_attributes.author.each do |author|
       self.item_creators.build :creator=>Creator.construct(author.to_s), :creator_type=>CreatorType.construct("author")
     end
