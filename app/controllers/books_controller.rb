@@ -33,7 +33,6 @@ class BooksController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
-    render :partial=>"item", :object=>@item
   end
   
   private

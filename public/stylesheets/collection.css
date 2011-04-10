@@ -1,20 +1,11 @@
-dl {
-	max-width: 490px;
+
+div.artwork {
+	float: right;
 }
 
-dl dt {
-	display: inline-block;
-	width: 100px;
-	margin-right: 10px;
-	font-weight: bold;
+.pron {
+	font-size: 100px;
 }
-
-dl dd {
-	display: inline-block;
-	margin: 0;
-	width: 280px;
-}
-
 
 .pron .boldface {
     font-weight: 700;
@@ -25,3 +16,54 @@ dl dd {
     font-family: Georgia,Verdana,Arial,Helvetica,sans-serif;
     font-style: italic;
 }
+
+.artwork {
+	float: right;
+}
+
+dl.item_display
+{
+		display: inline-block;
+		width: 600px;
+}
+
+dl.item_display dt
+{
+		float: left;
+		width: 300px;
+	
+}
+
+dl.item_display dd
+{
+	margin-left: 350px;
+	width: 300px;
+}
+
+/*
+dl.item_display
+{
+	display: block;
+
+	margin: 2em 0;
+	padding: 0;
+	font-family: georgia, times, serif;
+}
+
+dl.item_display dt
+{
+	position: relative;
+	float: left;
+	left: 0;
+	top: 1.1em;
+	width: 200px;
+	font-weight: bold;
+}
+
+dl.item_display dd
+{
+	width: 400px;
+	border-left: 1px solid #000;
+	margin: 0 0 0 200px;
+	padding: 0 0 .5em .5em;
+}*/

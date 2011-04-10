@@ -1,6 +1,14 @@
-<div class="title"><%= @item.name %></div>
-<dl>
+<div class="title"><%= item.name %></div>
+
+<dl class="item_display">
 	<dt>author(s):</dt>
-	
-	<dd></dd>
+	<% item.authors.each do |author| %>
+		<dd><%= author.name.titlecase %></dd>
+	<% end %>
+	<% item.metadata.each do |metadatum| %>
+		<dt><%= metadatum.metadata_type.name.titlecase %>:</dt>
+		<dd><%= metadatum.value.titlecase %></dd>
+	<% end %>
 </dl>
+
+	<%= image_tag item.image, :class=>"artwork" %>

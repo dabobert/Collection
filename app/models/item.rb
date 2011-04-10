@@ -20,9 +20,6 @@ class Item < ActiveRecord::Base
 
   include Amazon::AWS
   include Amazon::AWS::Search
-
-  ASSOCIATES_ID = "k0f65-20"
-  KEY_ID = "1CCH6DMMGPQC7HMT2G82" 
   
   def keys
     @keys ||= self.item_keys
@@ -71,8 +68,15 @@ class Item < ActiveRecord::Base
     end
     self.metadata.build :metadata_type=>MetadataType.construct("publisher"), :value=>self.data.item_attributes.publisher.to_s.downcase
     self.metadata.build :metadata_type=>MetadataType.construct("number_of_pages"), :value=>self.data.item_attributes.number_ofpages.to_s unless self.data.item_attributes.number_ofpages.blank?
-    self.metadata.build :metadata_type=>MetadataType.construct("publisher"), :value=>self.data.item_attributes.dewey_decimal_number.to_s unless self.data.item_attributes.dewey_decimal_number.blank?
+    #self.metadata.build :metadata_type=>MetadataType.construct("dewey_decimal_number"), :value=>self.data.item_attributes.dewey_decimal_number.to_s unless self.data.item_attributes.dewey_decimal_number.blank?
     
   end
+  
+  
+  
+  def authors
+    @authors ||= self.item_creators.find(:all, :conditions=>["creator_type_id = ?",CreatorType.find_by_name("author")]).collect do |item_creator| item_creator.creator end
+  end
+  
   
 end

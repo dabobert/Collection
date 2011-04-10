@@ -1,5 +1,5 @@
 class String
   def titlecase
-    self.gsub(/\b\w/){$&.upcase}
+    self.gsub("_"," ").gsub(/\b\w/){$&.upcase}
   end
 end
