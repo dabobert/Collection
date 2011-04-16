@@ -1,0 +1,6 @@
+<h2>Creators</h2>
+<ul>
+	<% @creators.each do |creator| %>
+		<li><%= link_to creator.name.titlecase, edit_creator_path(creator) %></li>
+	<% end %>
+</ul>

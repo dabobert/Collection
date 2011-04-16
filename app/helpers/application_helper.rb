@@ -7,4 +7,12 @@ module ApplicationHelper
   def crud_submit(object)
       submit_tag "#{object.new_record? ? "Create!" : "Save Changes"}", :disable_with => "Please wait...", :id=>"submit_#{object.new_record? ? "new_"+object.class.name.underscore : object.class.name.underscore+"_"+object.id.to_s}"
   end
+  
+  def metadata_labeler type
+    type.downcase!
+    case type
+      when "category": "Categori(es)"
+      else type.titlecase+"(s)"
+    end
+  end
 end

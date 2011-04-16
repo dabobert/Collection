@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100913010248) do
+ActiveRecord::Schema.define(:version => 20110410202857) do
 
   create_table "creator_types", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20100913010248) do
   end
 
   add_index "creators", ["name"], :name => "index_creators_on_name"
+
+  create_table "full_texts", :force => true do |t|
+    t.text     "text"
+    t.integer  "textable_id"
+    t.string   "textable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "item_creators", :force => true do |t|
     t.integer  "item_id"
@@ -70,6 +78,9 @@ ActiveRecord::Schema.define(:version => 20100913010248) do
     t.string   "image"
     t.integer  "image_width"
     t.integer  "image_height"
+    t.text     "thumbnail"
+    t.integer  "thumbnail_height"
+    t.integer  "thumbnail_width"
   end
 
   add_index "items", ["item_type_id"], :name => "index_items_on_item_type_id"

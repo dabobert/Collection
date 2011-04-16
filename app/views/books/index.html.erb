@@ -2,6 +2,7 @@
 
 <table>
 	<thead>
+		<th></th>
 		<th>Name</th>
 		<th>Type</th>
 		<th>Rating</th>
@@ -9,9 +10,11 @@
 	<tbody>
 		<% @items.each do |item| %>
 			<tr>
-				<td><%= link_to item.name, edit_item_path(item) %></td>
+				<td><%= link_to "&raquo;", edit_book_path(item) %></td>
+				<td><%= link_to item.name, book_path(item) %></td>
 				<td><%= item.item_type.name unless item.item_type.nil? %></td>
 				<td><%= item.rating %></td>
+				<td>X</td>
 			</tr>
 		<% end %>
 	</tbody>
