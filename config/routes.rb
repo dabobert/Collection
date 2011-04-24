@@ -36,8 +36,16 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :items
   map.resources :item_types
   map.resources :creator_types
-  map.resources :creators
   map.resources :books
+  map.resources :metadata do |metadata|
+    metadata.resources :items
+    metadata.resources :books
+  end
+  
+  map.resources :creators do |creators|
+    creators.resources :items
+    creators.resources :books
+  end
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

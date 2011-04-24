@@ -3,7 +3,21 @@ class BooksController < ApplicationController
   
   
   def index
-    @items = Item.all
+    if params[:creator_id]
+      @creator = Creator.find(params[:creator_id])
+      items = @creator.items.find(:all, :conditions=>"itemable_type='Book'")
+      @books = items.collect do |item|
+        item.itemable
+      end
+    elsif params[:metadatum_id]
+      @metadatum = Metadatum.find(params[:metadatum_id])
+      items = @metadatum.items.find(:all, :conditions=>"itemable_type='Book'")
+      @books = items.collect do |item|
+        item.itemable
+      end
+    else
+      @books = Book.all
+    end
   end
   
   def new
@@ -33,7 +47,15 @@ class BooksController < ApplicationController
   
   
   def show
-    @item = Item.find(params[:id])
+    @book = Book.find(params[:id])
+  end
+  
+  def destroy
+    book = Book.find(params[:id])
+    @name = book.item.name
+    book.destroy
+    flash[:notice] = "#{@name} has been deleted"
+    redirect_to books_path
   end
   
   private

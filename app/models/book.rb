@@ -1,13 +1,9 @@
-class Book < Item
+class Book < ActiveRecord::Base
   
-  attr_accessor :item
-  
-  def self.find(id)
-    item = Item.find(id)
-    self
-  end
-  
+  has_one :item, :as=>:itemable
+
   def authors
-    self.item_creators.find(:all, :conditions=>["creator_type_id = ?",CreatorType.find_by_name("author")])
+    self.item.item_creators.find(:all, :conditions=>["creator_type_id = ?",CreatorType.find_by_name("author")])
   end
+  
 end

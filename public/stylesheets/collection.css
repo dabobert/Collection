@@ -1,12 +1,11 @@
 div#header {
-	width: 1000px;
+	width: 850px;
 }
 
-
 .pron {
-	display:inline;
+	display: block;
 	float: left;
-	font-size: 100px;
+	font-size: 100px;	
 }
 
 .pron .boldface {
@@ -29,19 +28,14 @@ div#header {
 }
 
 .definition {
-	background-color: red;
-	width: 150px;
-	display: block;
 	font-size: 10px;
-	padding: 0px;
-	margin: 0px;
-	border: 0px;
 }
-/*
-ol.definition li {
 
+.definition span.number {
+	font-weight: bold;
 }
-*/
+
+
 div.title {
 	font-size: 32px;
 }
@@ -89,7 +83,17 @@ dl.item_display dd
 
 hr {
 	clear: both;
+}
 
+div.nav_wrapper {
+	padding: 20px 0px 20px 0px;
+}
+
+ul.nav {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	margin-top: 0px;
 }
 
 ul.nav li
@@ -109,4 +113,34 @@ ul.nav li a{
 
 ul.nav li a:hover {
 	text-decoration: underline;
+}
+
+table.index {
+	border-collapse:collapse;
+}
+
+table.index td.name {
+	width: 500px;
+}
+
+table.index td.type {
+	padding-right: 10px;
+}
+
+table.index td.rating {
+	width: 100px;
+}
+
+table.index tr:hover {
+	border-bottom:1px solid #000000;
+}
+
+/*table.index*/ a {
+	color: #373737;
+	text-decoration: none;
+}
+
+/*table.index*/ a:hover {
+	font-style: italic;
+	color: black;
 }

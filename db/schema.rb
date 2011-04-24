@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110410202857) do
+ActiveRecord::Schema.define(:version => 20110424221654) do
+
+  create_table "books", :force => true do |t|
+    t.string   "isbn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "creator_types", :force => true do |t|
     t.string   "name"
@@ -59,6 +65,16 @@ ActiveRecord::Schema.define(:version => 20110410202857) do
   add_index "item_keys", ["item_id"], :name => "index_item_keys_on_item_id"
   add_index "item_keys", ["key_type_id"], :name => "index_item_keys_on_key_id"
 
+  create_table "item_metadata", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "metadatum_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "item_metadata", ["item_id"], :name => "index_item_metadata_on_item_id"
+  add_index "item_metadata", ["metadatum_id"], :name => "index_item_metadata_on_metadatum_id"
+
   create_table "item_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -81,9 +97,12 @@ ActiveRecord::Schema.define(:version => 20110410202857) do
     t.text     "thumbnail"
     t.integer  "thumbnail_height"
     t.integer  "thumbnail_width"
+    t.string   "itemable_type"
+    t.integer  "itemable_id"
   end
 
   add_index "items", ["item_type_id"], :name => "index_items_on_item_type_id"
+  add_index "items", ["itemable_id"], :name => "index_items_on_itemable_id"
   add_index "items", ["name"], :name => "index_items_on_name"
   add_index "items", ["rating"], :name => "index_items_on_rating"
   add_index "items", ["year"], :name => "index_items_on_year"
@@ -98,7 +117,6 @@ ActiveRecord::Schema.define(:version => 20110410202857) do
   add_index "key_types", ["item_type_id"], :name => "index_key_types_on_item_type_id"
 
   create_table "metadata", :force => true do |t|
-    t.integer  "item_id"
     t.integer  "metadata_type_id"
     t.string   "value"
     t.datetime "created_at"

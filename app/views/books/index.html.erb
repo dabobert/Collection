@@ -1,20 +1,28 @@
-<h2>Items</h2>
+<% if @creator %>
+	<h2>Books by <%=@creator.name %></h2>
+<% elsif @metadatum %>
+	<h2>Books filtered by <%= @metadatum.value %></h2>
+<% else %>
+	<h2>Books</h2>
+<% end %>
 
-<table>
+<table class="index">
 	<thead>
 		<th></th>
 		<th>Name</th>
 		<th>Type</th>
+		<% "<th>role</th>" unless @creator.blank? %>
 		<th>Rating</th>
 	</thead>
 	<tbody>
-		<% @items.each do |item| %>
+		<% @books.each do |book| %>
 			<tr>
-				<td><%= link_to "&raquo;", edit_book_path(item) %></td>
-				<td><%= link_to item.name, book_path(item) %></td>
-				<td><%= item.item_type.name unless item.item_type.nil? %></td>
-				<td><%= item.rating %></td>
-				<td>X</td>
+				<td><%= link_to "&raquo;", edit_item_path(book.item) %></td>
+				<td class="name"><%= link_to book.item.name, book_path(book) %></td>
+				<td class="type"><%= book.item.item_type.name unless book.item.item_type.nil? %></td>
+				<%= "<td>#{book.item.role(@creator)}</td>" unless @creator.blank? %>
+				<td class="rating"><%= book.item.rating %></td>
+				<td><%= link_to("X", book_path(book), :method => :delete, :confirm => "Are you sure?" ) %></td>
 			</tr>
 		<% end %>
 	</tbody>

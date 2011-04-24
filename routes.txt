@@ -1,0 +1,74 @@
+(in /Users/jinx/projects/collection)
+               root        /                                                {:controller=>"items", :action=>"index"}
+              items GET    /items(.:format)                                 {:controller=>"items", :action=>"index"}
+                    POST   /items(.:format)                                 {:controller=>"items", :action=>"create"}
+           new_item GET    /items/new(.:format)                             {:controller=>"items", :action=>"new"}
+          edit_item GET    /items/:id/edit(.:format)                        {:controller=>"items", :action=>"edit"}
+               item GET    /items/:id(.:format)                             {:controller=>"items", :action=>"show"}
+                    PUT    /items/:id(.:format)                             {:controller=>"items", :action=>"update"}
+                    DELETE /items/:id(.:format)                             {:controller=>"items", :action=>"destroy"}
+         item_types GET    /item_types(.:format)                            {:controller=>"item_types", :action=>"index"}
+                    POST   /item_types(.:format)                            {:controller=>"item_types", :action=>"create"}
+      new_item_type GET    /item_types/new(.:format)                        {:controller=>"item_types", :action=>"new"}
+     edit_item_type GET    /item_types/:id/edit(.:format)                   {:controller=>"item_types", :action=>"edit"}
+          item_type GET    /item_types/:id(.:format)                        {:controller=>"item_types", :action=>"show"}
+                    PUT    /item_types/:id(.:format)                        {:controller=>"item_types", :action=>"update"}
+                    DELETE /item_types/:id(.:format)                        {:controller=>"item_types", :action=>"destroy"}
+      creator_types GET    /creator_types(.:format)                         {:controller=>"creator_types", :action=>"index"}
+                    POST   /creator_types(.:format)                         {:controller=>"creator_types", :action=>"create"}
+   new_creator_type GET    /creator_types/new(.:format)                     {:controller=>"creator_types", :action=>"new"}
+  edit_creator_type GET    /creator_types/:id/edit(.:format)                {:controller=>"creator_types", :action=>"edit"}
+       creator_type GET    /creator_types/:id(.:format)                     {:controller=>"creator_types", :action=>"show"}
+                    PUT    /creator_types/:id(.:format)                     {:controller=>"creator_types", :action=>"update"}
+                    DELETE /creator_types/:id(.:format)                     {:controller=>"creator_types", :action=>"destroy"}
+              books GET    /books(.:format)                                 {:controller=>"books", :action=>"index"}
+                    POST   /books(.:format)                                 {:controller=>"books", :action=>"create"}
+           new_book GET    /books/new(.:format)                             {:controller=>"books", :action=>"new"}
+          edit_book GET    /books/:id/edit(.:format)                        {:controller=>"books", :action=>"edit"}
+               book GET    /books/:id(.:format)                             {:controller=>"books", :action=>"show"}
+                    PUT    /books/:id(.:format)                             {:controller=>"books", :action=>"update"}
+                    DELETE /books/:id(.:format)                             {:controller=>"books", :action=>"destroy"}
+    metadatum_items GET    /metadata/:metadatum_id/items(.:format)          {:controller=>"items", :action=>"index"}
+                    POST   /metadata/:metadatum_id/items(.:format)          {:controller=>"items", :action=>"create"}
+ new_metadatum_item GET    /metadata/:metadatum_id/items/new(.:format)      {:controller=>"items", :action=>"new"}
+edit_metadatum_item GET    /metadata/:metadatum_id/items/:id/edit(.:format) {:controller=>"items", :action=>"edit"}
+     metadatum_item GET    /metadata/:metadatum_id/items/:id(.:format)      {:controller=>"items", :action=>"show"}
+                    PUT    /metadata/:metadatum_id/items/:id(.:format)      {:controller=>"items", :action=>"update"}
+                    DELETE /metadata/:metadatum_id/items/:id(.:format)      {:controller=>"items", :action=>"destroy"}
+    metadatum_books GET    /metadata/:metadatum_id/books(.:format)          {:controller=>"books", :action=>"index"}
+                    POST   /metadata/:metadatum_id/books(.:format)          {:controller=>"books", :action=>"create"}
+ new_metadatum_book GET    /metadata/:metadatum_id/books/new(.:format)      {:controller=>"books", :action=>"new"}
+edit_metadatum_book GET    /metadata/:metadatum_id/books/:id/edit(.:format) {:controller=>"books", :action=>"edit"}
+     metadatum_book GET    /metadata/:metadatum_id/books/:id(.:format)      {:controller=>"books", :action=>"show"}
+                    PUT    /metadata/:metadatum_id/books/:id(.:format)      {:controller=>"books", :action=>"update"}
+                    DELETE /metadata/:metadatum_id/books/:id(.:format)      {:controller=>"books", :action=>"destroy"}
+           metadata GET    /metadata(.:format)                              {:controller=>"metadata", :action=>"index"}
+                    POST   /metadata(.:format)                              {:controller=>"metadata", :action=>"create"}
+      new_metadatum GET    /metadata/new(.:format)                          {:controller=>"metadata", :action=>"new"}
+     edit_metadatum GET    /metadata/:id/edit(.:format)                     {:controller=>"metadata", :action=>"edit"}
+          metadatum GET    /metadata/:id(.:format)                          {:controller=>"metadata", :action=>"show"}
+                    PUT    /metadata/:id(.:format)                          {:controller=>"metadata", :action=>"update"}
+                    DELETE /metadata/:id(.:format)                          {:controller=>"metadata", :action=>"destroy"}
+      creator_items GET    /creators/:creator_id/items(.:format)            {:controller=>"items", :action=>"index"}
+                    POST   /creators/:creator_id/items(.:format)            {:controller=>"items", :action=>"create"}
+   new_creator_item GET    /creators/:creator_id/items/new(.:format)        {:controller=>"items", :action=>"new"}
+  edit_creator_item GET    /creators/:creator_id/items/:id/edit(.:format)   {:controller=>"items", :action=>"edit"}
+       creator_item GET    /creators/:creator_id/items/:id(.:format)        {:controller=>"items", :action=>"show"}
+                    PUT    /creators/:creator_id/items/:id(.:format)        {:controller=>"items", :action=>"update"}
+                    DELETE /creators/:creator_id/items/:id(.:format)        {:controller=>"items", :action=>"destroy"}
+      creator_books GET    /creators/:creator_id/books(.:format)            {:controller=>"books", :action=>"index"}
+                    POST   /creators/:creator_id/books(.:format)            {:controller=>"books", :action=>"create"}
+   new_creator_book GET    /creators/:creator_id/books/new(.:format)        {:controller=>"books", :action=>"new"}
+  edit_creator_book GET    /creators/:creator_id/books/:id/edit(.:format)   {:controller=>"books", :action=>"edit"}
+       creator_book GET    /creators/:creator_id/books/:id(.:format)        {:controller=>"books", :action=>"show"}
+                    PUT    /creators/:creator_id/books/:id(.:format)        {:controller=>"books", :action=>"update"}
+                    DELETE /creators/:creator_id/books/:id(.:format)        {:controller=>"books", :action=>"destroy"}
+           creators GET    /creators(.:format)                              {:controller=>"creators", :action=>"index"}
+                    POST   /creators(.:format)                              {:controller=>"creators", :action=>"create"}
+        new_creator GET    /creators/new(.:format)                          {:controller=>"creators", :action=>"new"}
+       edit_creator GET    /creators/:id/edit(.:format)                     {:controller=>"creators", :action=>"edit"}
+            creator GET    /creators/:id(.:format)                          {:controller=>"creators", :action=>"show"}
+                    PUT    /creators/:id(.:format)                          {:controller=>"creators", :action=>"update"}
+                    DELETE /creators/:id(.:format)                          {:controller=>"creators", :action=>"destroy"}
+                           /:controller/:action/:id                         
+                           /:controller/:action/:id(.:format)               
