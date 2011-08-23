@@ -1,9 +1,0 @@
-<%= crud_header @item_type %>
-
-<% form_for @item_type do |form| %>
-	<dl>
-		<dd><%= form.label :item_type, :name %></dd>
-		<dt><%= form.text_field :name %></dt>
-	</dl>
-	<%= crud_submit(@item_type) %>
-<% end %>
