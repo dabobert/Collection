@@ -1,0 +1,153 @@
+div#header {
+	width: 850px;
+}
+
+.pron {
+	display: block;
+	float: left;
+	font-size: 100px;	
+}
+
+.pron .boldface {
+    font-weight: 700;
+}
+
+.pron .ital-inline {
+    display: inline;
+    font-family: Georgia,Verdana,Arial,Helvetica,sans-serif;
+		left: -300px;
+    font-style: italic;
+}
+
+.header_ital {
+	position: relative;
+	padding-top: 20px;
+	padding-left: 720px;
+	font-family: 	Verdana,Arial,Helvetica,sans-serif;
+	font-style: italic;
+}
+
+.definition {
+	font-size: 10px;
+}
+
+.definition span.number {
+	font-weight: bold;
+}
+
+
+div.title {
+	font-size: 32px;
+}
+
+a.edit_link {
+	color: black;
+	text-decoration: none;
+}
+
+a.edit_link:hover {
+	font-size: 115%;
+}
+
+.artwork {
+	display: inline-block;
+	position: relative;
+	float: left;
+	border: 1px solid #888;
+}
+
+dl.item_display
+{
+		float: left;
+		display: inline-block;
+		width: 500px;
+		margin-top: 32px;
+		padding-right: 40px;
+}
+
+dl.item_display dt
+{
+		float: left;
+		font-family: georgia, times, serif;
+		font-weight: bold;
+		top: 18px;	
+}
+
+dl.item_display dd
+{
+	margin-left: 200px;
+	width: 300px;
+	border-left: 1px solid black;
+	padding-left: 10px;
+	padding-bottom: 5px;
+}
+
+hr {
+	clear: both;
+}
+
+div.nav_wrapper {
+	padding: 20px 0px 20px 0px;
+}
+
+ul.nav {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+ul.nav li
+{
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+}
+
+ul.nav li a{
+	
+	color: black;
+	text-decoration: none;
+	font-family: Georgia,Verdana,Arial,Helvetica,sans-serif;
+	font-style: italic;
+}
+
+ul.nav li a:hover {
+	text-decoration: underline;
+}
+
+table.index {
+	border-collapse:collapse;
+}
+
+table.index th {
+	/*border-bottom: 1px solid #888;*/
+	border-bottom: 1px solid white;
+}
+
+table.index td.name {
+	width: 500px;
+}
+
+table.index td.type {
+	padding-right: 10px;
+}
+
+table.index td.rating {
+	color: #777;
+	width: 100px;
+}
+
+table.index tr:hover {
+	border-bottom:1px solid #000000;
+}
+
+/*table.index*/ a {
+	color: #373737;
+	text-decoration: none;
+}
+
+/*table.index*/ a:hover {
+	font-style: italic;
+	color: black;
+}

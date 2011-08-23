@@ -1,0 +1,18 @@
+<h2>Items</h2>
+
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Rating</th>
+	</thead>
+	<tbody>
+		<% @items.each do |item| %>
+			<tr>
+				<td><%= link_to item.name, edit_item_path(item) %></td>
+				<td><%= item.itemable_type %>
+				<td><%= item.rating %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
