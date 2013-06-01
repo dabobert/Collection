@@ -1,5 +1,15 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+
+  def errors_for(object)
+    object.errors.full_messages.collect do |msg|
+      "<p>#{msg}</p>"
+    end.to_s
+  end
+
+
+  end
+
   def crud_header(object)
       "<h2>#{object.new_record? ? "New" : "Edit"} #{object.class.name}</h2>"
   end
@@ -11,8 +21,10 @@ module ApplicationHelper
   def metadata_labeler type
     type.downcase!
     case type
-      when "category": "Categori(es)"
-      else type.titlecase+"(s)"
+      when "category"
+        "Categori(es)"
+      else
+        type.titlecase+"(s)"
     end
   end
   

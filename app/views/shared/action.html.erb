@@ -1,9 +1,9 @@
 <% form_for @item, :url=>{ :action =>"index", :controller => @category} do |form| %>
 <%# form_tag create_book_path do -%>
 <%# form_tag(book_path, :method=>'post') do %>
-	<%= form.error_messages %>
-	<%= label_tag :value, @type %>
-	<%= text_field_tag :value %>
-	<%= hidden_field_tag :type, @type %>
-	<%= crud_submit @item %>
+  <%= errors_for @item %>
+  <%= label_tag :value, @type %>
+  <%= text_field_tag :value %>
+  <%= hidden_field_tag :type, @type %>
+  <%= crud_submit @item %>
 <% end %>

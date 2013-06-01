@@ -1,7 +1,23 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
-gem 'mysql2', '< 0.3'
+gem 'rails', '3.2.13'
+gem "mysql2", "~> 0.3.11"
+gem "nokogiri", "~> 1.5.9"
+
+group :development, :test, :cucumber do
+  gem "random_data", "~> 1.6.0" #allows to easily create random date, like Random.email or Random.last
+  gem "rails-erd", "~> 1.0.0" #also produces diagrams
+  gem "railroady", "~> 1.1.0" #produces diagrams based on source code
+  gem 'debugger'
+  gem 'faker'
+  gem "better_errors"
+  #gem 'mongrel', '1.2.0.pre2'
+  gem 'unicorn'
+  #gem 'thin'
+  gem 'capistrano', '2.13.5'
+  gem 'binding_of_caller'
+end
+
 #gem "imagesize", "~> 0.1.1"
 #gem 'rmagick'
 # gem 'rmagick', :require => 'RMagick'
@@ -11,25 +27,7 @@ gem 'mysql2', '< 0.3'
 gem "amazon_product", "~> 3.0.0.pre.1"
 gem 'devise', '1.1.rc0'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
 # Bundle the extra gems:
 # gem 'bj'
-# gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end

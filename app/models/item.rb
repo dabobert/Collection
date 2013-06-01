@@ -66,7 +66,8 @@ class Item < ActiveRecord::Base
       item.data = data
       item.item_keys.build(:value=>data.xml.xpath("//xmlns:Item/xmlns:ASIN")[0].text, :key_type=>KeyType.construct("asin"))
       case type
-        when "book": item.assemble_book
+      when "book"
+        item.assemble_book
       end
       item
     else

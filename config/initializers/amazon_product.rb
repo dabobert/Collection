@@ -18,8 +18,10 @@ module AmazonProduct
         value[0]
       else
         case attribute
-          when "SmallImage": self.small_image
-          else value
+          when "SmallImage"
+            self.small_image
+          else
+            value
         end
       end
     end
@@ -27,8 +29,10 @@ module AmazonProduct
 
     def clean_title
       case self.find_value("ProductGroup").downcase
-        when "book": xml.xpath("//xmlns:ItemAttributes/xmlns:Title").text.gsub("Volume", "Vol.").gsub(", Vol", " Vol").gsub("Vol ", "Vol. ").gsub(/Vol. (([1-9])[^0-9]|([1-9])$)/, 'Vol. 0\1').gsub("- Vol.","Vol.")
-        else str
+        when "book"
+          xml.xpath("//xmlns:ItemAttributes/xmlns:Title").text.gsub("Volume", "Vol.").gsub(", Vol", " Vol").gsub("Vol ", "Vol. ").gsub(/Vol. (([1-9])[^0-9]|([1-9])$)/, 'Vol. 0\1').gsub("- Vol.","Vol.")
+        else
+          str
       end
     end
 
