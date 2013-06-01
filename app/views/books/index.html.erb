@@ -8,31 +8,31 @@ filtered by <%= @metadatum.value %>
 </h2>
 
 <table class="index">
-	<thead>
-		<th></th>
-		<th>Name</th>
-		<th>Type</th>
-		<%= raw("<th>Role</th>") unless @creator.blank? %>
-		<th>Rating</th>
-		<th>&nbsp;</th>
-		<th>&nbsp;</th>
-	</thead>
-	<tbody>
-		<% @books.each do |book| %>
-			<tr>
-				<td><%= link_to("»", edit_item_path(book.item)) %></td>
-				<td class="name"><%= link_to book.item.name, book_path(book) %></td>
-				<td class="type"><%= book.item.item_type.name unless book.item.item_type.nil? %></td>
-				<%= raw("<td>#{book.item.role(@creator)}</td>") unless @creator.blank? %>
-				<td class="rating"><%= book.item.rating %>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
-				<td><%= link_to("X", book_path(book), :method => :delete, :confirm => "Are you sure?" ) %></td>
-			</tr>
-		<% end %>
-	</tbody>
+  <thead>
+    <th></th>
+    <th>Name</th>
+    <th>Type</th>
+    <%= raw("<th>Role</th>") unless @creator.blank? %>
+    <th>Rating</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to("»", edit_item_path(book.item)) %></td>
+        <td class="name"><%= link_to book.item.name, book_path(book) %></td>
+        <td class="type"><%= book.item.item_type.name unless book.item.item_type.nil? %></td>
+        <%= raw("<td>#{book.item.role(@creator)}</td>") unless @creator.blank? %>
+        <td class="rating"><%= book.item.rating %>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+        <td><%= link_to("X", book_path(book), :method => :delete, :confirm => "Are you sure?" ) %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <% @books.each do |book| %>
-	<div style="float:left; height: 75px;">
-		<%= link_to image_tag(book.item.thumbnail), book_path(book) %>
-	</div>
+  <div style="float:left; height: 75px;">
+    <%= link_to image_tag(book.item.thumbnail), book_path(book) %>
+  </div>
 <% end %>

@@ -2,44 +2,44 @@
 <div><%= link_to "{edit}", edit_book_path(single),:class=>"edit_link" %></div>
 
 <%= form_for @book do |form| %>
-	<dl class="item_display">
-		<% single.item.creator_types.uniq.each do |creator_type| %>
-			<dt><%= creator_type.name.titlecase %></dt>
-			<% single.item.item_creators.find(:all, :conditions=>["creator_type_id=?",creator_type.id]).each do |item_creator| %>
-				<dd><%= item_creator.creator.name %></dd>
-			<% end %>
-		<% end %>
-	
-	
-		<dt>Publication Date:</dt>
-		<dd><%= single.item.publication_date %></dd>
-	
-		<% single.item.creator_types.uniq.each do |creator_type| %>
-			<dt><%= creator_type.name.titlecase %>(s)</dt>
-			<% single.item.item_creators.find(:all, :conditions=>["creator_type_id=?",creator_type.id]).each do |item_creator| %>
-				<dd><%= item_creator.creator.name %></dd>
-			<% end %>
-		<% end %>
-	
-		<% single.item.metadata_types.uniq.each do |metadata_type| %>
-			<dt><%= metadata_labeler metadata_type.name.titlecase %></dt>
-			<% single.item.metadata.find(:all, :conditions=>["metadata_type_id=?",metadata_type.id]).each do |metadatum| %>
-				<dd><%= metadatum.value.titlecase %></dd>
-			<% end %>
-		<% end %>
-	
-	
-		<% unless single.item.summary.blank? %>
-			<dt>Summary:</dt>
-			<dd><%= single.item.summary %></dd>
-		<% end %>
+  <dl class="item_display">
+    <% single.item.creator_types.uniq.each do |creator_type| %>
+      <dt><%= creator_type.name.titlecase %></dt>
+      <% single.item.item_creators.find(:all, :conditions=>["creator_type_id=?",creator_type.id]).each do |item_creator| %>
+        <dd><%= item_creator.creator.name %></dd>
+      <% end %>
+    <% end %>
+  
+  
+    <dt>Publication Date:</dt>
+    <dd><%= single.item.publication_date %></dd>
+  
+    <% single.item.creator_types.uniq.each do |creator_type| %>
+      <dt><%= creator_type.name.titlecase %>(s)</dt>
+      <% single.item.item_creators.find(:all, :conditions=>["creator_type_id=?",creator_type.id]).each do |item_creator| %>
+        <dd><%= item_creator.creator.name %></dd>
+      <% end %>
+    <% end %>
+  
+    <% single.item.metadata_types.uniq.each do |metadata_type| %>
+      <dt><%= metadata_labeler metadata_type.name.titlecase %></dt>
+      <% single.item.metadata.find(:all, :conditions=>["metadata_type_id=?",metadata_type.id]).each do |metadatum| %>
+        <dd><%= metadatum.value.titlecase %></dd>
+      <% end %>
+    <% end %>
+  
+  
+    <% unless single.item.summary.blank? %>
+      <dt>Summary:</dt>
+      <dd><%= single.item.summary %></dd>
+    <% end %>
 
-		<% single.item.keys.each do |key| %>
-			<dt><%= key.key_type.name.titlecase %>:</dt>
-			<dd><%= key.value %></dd>
-		<% end %>
-	
-	</dl>
+    <% single.item.keys.each do |key| %>
+      <dt><%= key.key_type.name.titlecase %>:</dt>
+      <dd><%= key.value %></dd>
+    <% end %>
+  
+  </dl>
 <% end %>
 <%= image_tag single.item.image, :class=>"artwork" %>
 <hr>

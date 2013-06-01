@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
   
   def crud_submit(object)
-	  submit_tag "#{object.new_record? ? "Create!" : "Save Changes"}", :id=>"submit_"+object.class.name, :class=>"save"
-	end
-	
+    submit_tag "#{object.new_record? ? "Create!" : "Save Changes"}", :id=>"submit_"+object.class.name, :class=>"save"
+  end
+  
 end
